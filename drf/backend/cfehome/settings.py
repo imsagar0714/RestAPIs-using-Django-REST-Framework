@@ -62,6 +62,13 @@ ROOT_URLCONF = 'cfehome.urls'
 CORS_URL_REGEX=r"^/api/.*"
 CORS_ALLOWED_ORIGINS=[]
 
+MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
+    ...
+]
+
+CORS_ALLOW_ALL_ORIGINS = True
+
 if DEBUG:
     CORS_ALLOWED_ORIGINS=+[
         'http://localhost:8111',
